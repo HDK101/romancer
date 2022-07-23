@@ -1,0 +1,22 @@
+{
+  "name": "romancer",
+  "version": "0.0.0",
+  "description": "Framework with router, ORM and related",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Eisen",
+  "license": "MIT",
+  "dependencies": {
+    "@koa/router": "^12.0.0",
+    "@types/koa": "^2.13.5",
+    "@types/koa__router": "^8.0.11",
+    "koa": "^2.13.4",
+    "node-fetch": "^3.2.9"
+  },
+  "devDependencies": {
+    "typescript": "^4.7.4"
+  }
+}
