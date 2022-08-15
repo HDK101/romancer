@@ -4,19 +4,27 @@
   "description": "Framework with router, ORM and related",
   "main": "index.js",
   "scripts": {
-    "build": "tsc",
+    "build": "rimraf dist && tsc && tsc-alias",
+    "generate:models": "ts-node -r tsconfig-paths/register romancer/generators/models.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Eisen",
   "license": "MIT",
   "dependencies": {
     "@koa/router": "^12.0.0",
+    "@prisma/client": "^4.1.0",
     "@types/koa": "^2.13.5",
     "@types/koa__router": "^8.0.11",
     "koa": "^2.13.4",
     "node-fetch": "^3.2.9"
   },
   "devDependencies": {
+    "prisma": "^4.1.0",
+    "rimraf": "^3.0.2",
+    "ts-morph": "^15.1.0",
+    "ts-node": "^10.9.1",
+    "tsc-alias": "^1.7.0",
+    "tsconfig-paths": "^4.1.0",
     "typescript": "^4.7.4"
   }
 }

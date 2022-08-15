@@ -1,11 +1,19 @@
-import { Romancer } from './romancer';
+import Koa from 'koa';
+import Router from '@koa/router';
+import controllerMapper from '@romancer/controllers';
 
-async function start() {
-  const romancer = await Romancer.create();
-  const router = await import(__dirname + '/../routes.js');
-  romancer.start({
-    router: router.default,
-  });
+export class Romancer {
+  koa: Koa;
+  router?: Router;
+
+  constructor({ router }: { router: Router }) {
+    this.router = router;
+    this.koa = new Koa();
+
+    this.koa.use(router.routes()).use(router.allowedMethods());
+  }
+
+  start(port?: number) {
+    this.koa.listen(port || 3000);
+  }
 }
-
-start();

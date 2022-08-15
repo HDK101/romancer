@@ -1,0 +1,7 @@
+{
+  "paths": {
+    "models": "./src/app/models",
+    "controllers": "./src/app/controllers",
+    "middlewares": "./src/app/middlewares"
+  }
+}
